@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('task_id');
+            $table->string('description_log');
+
             $table->timestamps();
+
+            // FK
+            $table->foreign('task_id')->references('id')->on('tasks');
         });
     }
 

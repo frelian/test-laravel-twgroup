@@ -43,8 +43,6 @@ class ProductObserver
     public function updated(Product $product)
     {
         //
-
-        Log::info('Product UPDATED Listener');
     }
 
     /**
@@ -56,7 +54,6 @@ class ProductObserver
     public function deleted(Product $product)
     {
         //
-        Log::info('Product DELETED Listener');
     }
 
     /**
@@ -79,6 +76,5 @@ class ProductObserver
     public function forceDeleted(Product $product)
     {
         //
-        Log::info('Product forceDeleted Listener');
     }
 }

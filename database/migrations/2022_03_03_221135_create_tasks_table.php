@@ -13,9 +13,24 @@ return new class extends Migration
      */
     public function up()
     {
+        // La descripción de la tarea, el usuario asignado, la fecha máxima de ejecución.
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+
+            // Usuario creo
+            $table->unsignedBigInteger('created_user_id');
+
+            // Usuario asignado
+            $table->unsignedBigInteger('assigned_user_id');
+
+            $table->string('task_description', 150);
+            $table->date('max_date_execution');
+
             $table->timestamps();
+
+            // FK
+            $table->foreign('created_user_id')->references('id')->on('users');
+            $table->foreign('assigned_user_id')->references('id')->on('users');
         });
     }
 

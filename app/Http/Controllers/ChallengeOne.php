@@ -37,7 +37,7 @@ class ChallengeOne extends Controller
 
         $newRecord = Product::create([
             'invoice_id' => 4,
-            'name' => 'Test product 33',
+            'name' => 'My new product',
             'quantity' => 1,
             'price' => 780000
         ]);
